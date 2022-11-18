@@ -10,5 +10,5 @@ classifier = pipeline("sentiment-analysis",
                       "blanchefort/rubert-base-cased-sentiment")
 
 
-st.write(classifier(text))
+st.write(classifier(text)) #странный вывод!
 
