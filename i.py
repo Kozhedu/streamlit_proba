@@ -1,7 +1,7 @@
 import streamlit as st
 from transformers import pipeline
 
-st.header("Анализ тональности текста")
+st.header("Определение тональности текстов")
 st.subheader("Введите текст для анализа")
 
 text = st.text_area(" ",height=50)
