@@ -5,12 +5,12 @@ from pydantic import BaseModel
 class Item(BaseModel):
     text: str
 
-app = FastAPI()
-classifier = pipeline("sentiment-analysis")
+app = FastAPI(title= "Определение тональности текстов")
+classifier = pipeline("sentiment-analysis","blanchefort/rubert-base-cased-sentiment")
 
 @app.get("/")
 def root():
-    return {"message": "Hello World"}
+    return {"message": "Привет"}
 
 @app.post("/predict/")
 def predict(item: Item):
