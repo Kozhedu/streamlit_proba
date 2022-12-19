@@ -8,7 +8,6 @@ text = st.text_area(" ",height=100)
 
 classifier = pipeline("sentiment-analysis",   
                       "blanchefort/rubert-base-cased-sentiment")
-result = st.button('Распознать текст')
 st.write ("Тональность текста:")
 st.write(classifier(text)[0]["label"])
 
