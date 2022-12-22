@@ -1,11 +1,10 @@
-from fastapi.testclient import TestClient
-from i import app
+import i as app
+import streamlit as st
+from transformers import pipeline
 
-client = TestClient(app)
-
-def test_read_predict_positive():
-    response = client.post("/predict/",
-        json={"text": " Я всех люблю"}
+def test_predict_positive():
+    response = app.post("/predict/",
+        json={"text": "Люблю"}
     )
     json_data = response.json() 
 
