@@ -14,9 +14,9 @@ st.subheader ("Введите текст для анализа")
 text = st.text_area(" ",height=100)
 result = st.button("Определить тональность текста")
 
-
-if result:
-    res = model(text)
-    sent = res[0]['label'] 
-    st.write(model(text)[0]["label"])
+def predict(model):
+    if result:
+        res = model(text)
+        sent = res[0]['label'] 
+        return st.write(model(text)[0]["label"])
 
