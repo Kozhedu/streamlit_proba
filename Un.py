@@ -19,6 +19,7 @@ if datafile is None:
     st.stop()
 
 data = read_data(datafile).copy()
+dat = data.dropna(axis='index', how='any', subset=['text'])
 
 #обучение модели
 model=pipeline("sentiment-analysis",   
@@ -26,7 +27,7 @@ model=pipeline("sentiment-analysis",
                       
 result = st.sidebar.button('🤗Распознать')
 
-df_model = data.copy()
+df_model = dat.copy()
 
 if result:
     lst = []
